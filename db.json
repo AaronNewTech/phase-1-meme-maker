@@ -1,0 +1,64 @@
+{
+  "memes": [
+    {
+      "id": 1,
+      "name": "Boromir",
+      "top_comment": "One does not simply",
+      "bottom_comment": "convert data types in python",
+      "image": "https://i.imgflip.com/1bij.jpg",
+      "rating": 8
+    },
+    {
+      "id": 2,
+      "name": "Hide The Pain Harold",
+      "top_comment": "What could go wrong with learning a years worth of coding in 3 months","bottom_comment": "Well I used to be Chris Hemsworth",
+      "image": "https://imgflip.com/s/meme/Hide-the-Pain-Harold.jpg",
+      "rating": 8
+    },
+    {
+      "id": 3,
+      "name": "Drake",
+      "top_comment": "Looking up code on stackoverflow","bottom_comment": "Looking up code in last week's lab",
+      "image": "https://knowyourinternethome.files.wordpress.com/2018/12/no-yes-drake.jpg?w=640",
+      "rating": 8
+    },
+    {
+      "id": 4,
+      "name": "Kayode Ewumi",
+      "top_comment": "Struggling with code and","bottom_comment": "you realize just go to discord",
+      "image": "https://i.imgflip.com/1l8lo8.jpg",
+      "rating": 6
+    },
+    {
+      "id": 5,
+      "name": "Success Kid",
+      "top_comment": "When your code looks wrong",
+      "bottom_comment": "then you console.log and its right",
+      "image": "https://imgflip.com/s/meme/Success-Kid.jpg",
+      "rating": 6
+    },
+    {
+      "id": 6,
+      "name": "World's Most Interesting Man",
+      "top_comment": "I don't alawys code html",
+      "bottom_comment": "but when I do I copy and paste",
+      "image": "https://imgflip.com/s/meme/The-Most-Interesting-Man-In-The-World.jpg",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "name": "Willy Wonka",
+      "top_comment": "Tell me again how you","bottom_comment": "destroyed the code challenge",
+      "image": "https://i.imgflip.com/b47pu.jpg?a468720",
+      "rating": 5
+    },
+    {
+      "id": 8,
+      "name": "Giorgio A. Tsoukalos",
+      "top_comment": "Who finished my code",
+      "bottom_comment": "Aliens",
+      "image": "https://i.imgflip.com/26am.jpg",
+      "rating": 8
+    }
+  ]
+}

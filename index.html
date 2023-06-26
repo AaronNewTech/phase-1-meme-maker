@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Meme Maker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script defer type="text/javascript" src="./src/index.js"></script>
+    <button id="coding-memes" class="btn btn-fill-center"> <span class="btn-fill-center-text btn-fill-center-text--gray">Click For Coding Memes</span> </button>
+
+  </head>
+
+  <body>
+    <header>
+      <h3>Make Your Own Meme</h3>
+    </header>
+
+    <!-- Meme Menu -->
+    <div id="meme-menu">
+      <!--  Images Here -->
+    </div>
+
+    <!-- Meme Details -->
+    <div id="meme-detail">
+      <img
+        class="detail-image"
+        src="./placeholder image/image-placeholder.jpg"
+        alt="Insert Name Here"
+      />
+      <h2 class="top-comment">Insert Top Comment Here</h2>
+
+      <h2 id="bottom-comment">Insert comment here</h2>
+    
+    </div>
+    <h2 class="name">Insert Name Here</h2>
+    <h2>Rating:</h2>
+    
+    <h3><span id="rating-display">Insert rating here</span> / 10</h3>
+    
+
+    <!-- New Meme Form -->
+    <form id="new-meme">
+      <h4>Add New Meme</h4>
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="new-name" />
+      <label for="image">Image: </label>
+      <input type="text" name="image" id="new-image" />
+      <label for="new-top-comment">Top Comment: </label>
+      <textarea name="new-comment" id="new-top-comment"></textarea>
+      <label for="new--bottom-comment">Bottom Comment: </label>
+      <textarea name="new-comment" id="new-bottom-comment"></textarea>
+      <label for="rating">Rating: </label>
+      <input type="number" name="rating" id="new-rating" />
+      
+      <input type="submit" value="Create" />
+    </form>
+  </body>
+</html>
