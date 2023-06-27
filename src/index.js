@@ -1,68 +1,41 @@
 let currentMeme;
 let navBar = document.getElementById("meme-menu");
 
-const codingMemesAPI = "http://localhost:3000/memes";
-const memesAPI = "https://api.imgflip.com/get_memes";
-// fetch("https://api.imgflip.com/get_memes")
-//   .then((resp) => resp.json())
-//   .then((data) => {
-//     data.forEach((data) => navMenu(data));
-//     memeDetails(data[0]);
-//     // createMeme(data);
-//   });
+const codingMemesAPI = "https://meme-api.com/gimme/ProgrammerHumor/10/";
+const memesAPI = "https://meme-api.com/gimme/ProgrammerHumor/10";
 
-function codingMemes() {
-  const codingMemesButton = document.getElementById("coding-memes");
-  
-  codingMemesButton.addEventListener("click", () => {
-    navBar.innerHTML = [];
-    fetch(codingMemesAPI)
-      .then((resp) => resp.json())
-      .then((data) => {
-        data.forEach((data) => navMenu(data));
-        memeDetails(data[0]);
-        // createMeme(data);
-      });
-  });
+function loadMemes() {
+  fetch(memesAPI)
+    .then((imgFlipResp) => imgFlipResp.json())
+
+    .then((APIData) => {
+      let memeData = APIData.memes;
+      memeData.forEach((memeData) => navMenu(memeData));
+
+      memeDetails(APIData.memes[0]);
+      console.log(APIData.memes[0]);
+    });
 }
-codingMemes();
+loadMemes();
 
-fetch(memesAPI)
-  .then((imgFlipResp) => imgFlipResp.json())
-  
-  .then((imgFlipData) => {
-    imgFlipData.forEach((imgFlipData) => navMenu(imgFlipData));
-    memeDetails(imgFlipData[0]);
-    // createMeme(data);
-    console.log(imgFlipData)
-  });
-
-function navMenu(imgFlipData) {
+function navMenu(memeData) {
   const menuImg = document.createElement("img");
 
-  menuImg.src = imgFlipData.image;
+  console.log(memeData);
+  menuImg.src = memeData.url;
+  console.log(menuImg);
 
   navBar.append(menuImg);
 
   menuImg.addEventListener("click", () => {
-    memeDetails(imgFlipData);
+    memeDetails(codingMemesAPI);
   });
 }
 
-function memeDetails(data) {
-  currentMeme = data;
+function memeDetails(codingMemesAPI) {
+  currentMeme = codingMemesAPI;
   const name = document.querySelector(".name");
-  name.textContent = data.name;
 
   const image = document.querySelector(".detail-image");
-  image.src = data.image;
-
-  const topText = document.querySelector(".top-comment");
-  topText.textContent = data.top_comment;
-
-  const bottomComment = document.getElementById("bottom-comment");
-  bottomComment.textContent = data.bottom_comment;
-
-  const rating = document.getElementById("rating-display");
-  rating.textContent = data.rating;
+  image.src = currentMeme.url;
 }
