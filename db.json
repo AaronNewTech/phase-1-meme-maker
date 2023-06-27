@@ -11,21 +11,24 @@
     {
       "id": 2,
       "name": "Hide The Pain Harold",
-      "top_comment": "What could go wrong with learning a years worth of coding in 3 months","bottom_comment": "Well I used to be Chris Hemsworth",
-      "image": "https://imgflip.com/s/meme/Hide-the-Pain-Harold.jpg",
+      "top_comment": "What could go wrong with learning a years worth of coding in 3 months",
+      "bottom_comment": "Well I used to be Chris Hemsworth",
+      "image": "https://pbs.twimg.com/media/EPEQixFU0AAtcEK?format=jpg&name=large",
       "rating": 8
     },
     {
       "id": 3,
       "name": "Drake",
-      "top_comment": "Looking up code on stackoverflow","bottom_comment": "Looking up code in last week's lab",
+      "top_comment": "Looking up code on stackoverflow",
+      "bottom_comment": "Looking up code in last week's lab",
       "image": "https://knowyourinternethome.files.wordpress.com/2018/12/no-yes-drake.jpg?w=640",
       "rating": 8
     },
     {
       "id": 4,
       "name": "Kayode Ewumi",
-      "top_comment": "Struggling with code and","bottom_comment": "you realize just go to discord",
+      "top_comment": "Struggling with code and",
+      "bottom_comment": "you realize just go to discord",
       "image": "https://i.imgflip.com/1l8lo8.jpg",
       "rating": 6
     },
@@ -48,7 +51,8 @@
     {
       "id": 7,
       "name": "Willy Wonka",
-      "top_comment": "Tell me again how you","bottom_comment": "destroyed the code challenge",
+      "top_comment": "Tell me again how you",
+      "bottom_comment": "destroyed the code challenge",
       "image": "https://i.imgflip.com/b47pu.jpg?a468720",
       "rating": 5
     },

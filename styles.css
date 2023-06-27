@@ -3,12 +3,28 @@
   font-family: Impact, Helvetica, sans-serif;
   box-sizing: border-box;
   color: white;
-  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-             1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
-  
+  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
+    -1px -1px #000, 1px -1px #000, -1px 1px #000;
 }
 
-.btn {  font-family: Arial, Helvetica, sans-serif;  text-transform: uppercase;}  .btn:hover .btn-slide-show-text1 {  margin-left: 65px;}  .btn-fill-center {  text-align: center;  cursor: pointer;  text-transform: uppercase;  font-weight: 700;  transition: all 0.5s ease-in 0s;}  
+.btn {
+  height: 50px;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 65px;
+}
+.btn-fill-center {
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.5s ease-in 0s;
+}
 
 body {
   padding: 1rem;
@@ -24,7 +40,8 @@ header {
   padding: 0.5rem;
   width: 100%;
   color: white;
-  background-color: black;
+  background-color: rgb(233, 128, 9);
+  font-size: 24px;
 }
 
 #meme-menu {
@@ -50,25 +67,30 @@ header {
 }
 
 .detail-image {
-  height: 400px;
+  max-width: 1000px;
+  max-height: 700px;
+  /* min-width: 500px; */
+  min-height: 500px;
 }
 
 .bottom-comment,
 .top-comment {
   position: absolute;
+  margin: auto;
+  font-size: 40px;
+  width: 100%;
+
   /* left: 10px; */
   /* padding: 0.25rem 5rem 0.25rem 1rem; */
   /* background-color: rgba(255, 255, 255, 0.8); */
 }
 
 .top-comment {
-  width: 50%;
   top: 20px;
-  text-align: center;
 }
 
 .bottom-comment {
-  bottom: 80px;
+  bottom: 50px;
 }
 
 form {
