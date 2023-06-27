@@ -6,7 +6,7 @@ let currentMeme;
 let navBar = document.getElementById("meme-menu");
 let memeData;
 // const codingMemesAPI = "https://meme-api.com/gimme/ProgrammerHumor/10/";
-const memesAPI = "http://localhost:5500/memes";
+const memesAPI = "http://localhost:3000/memes";
 
 function loadMemes() {
   fetch(memesAPI)
@@ -47,7 +47,7 @@ function memeDetails(data) {
 
   const topText = document.querySelector(".top-comment");
   topText.textContent = data.top_comment;
-  console.log(topText);
+  // console.log(topText);
   const bottomComment = document.querySelector(".bottom-comment");
   bottomComment.textContent = data.bottom_comment;
 
@@ -66,23 +66,26 @@ function memeDetails(data) {
 // console.log(title);
 //}
 
+
 //function to add new meme
 const addNewMeme = () => {
   const newMeme = document.getElementById("new-meme");
   newMeme.addEventListener("submit", (e) => {
     e.preventDefault();
-    const newName = document.getElementById("new-name");
-    const newImg = document.getElementById("new-image");
-    const newTopText = document.getElementById("new-top-comment");
-    const newBottomText = document.getElementById("new-bottom-comment");
+    const newName = document.getElementById("new-name").value;
+    const newImg = document.getElementById("new-image").value;
+    const newTopText = document.getElementById("new-top-comment").value;
+    const newBottomText = document.getElementById("new-bottom-comment").value;
 
     //new object holder for submitted information
     const newData = {
       name: newName,
       top_comment: newTopText,
       bottom_comment: newBottomText,
-      image: newImage,
+      image: newImg,
     };
+
+    
     //re-fetch local server to add object data to
     fetch(memesAPI,
       {
@@ -97,5 +100,10 @@ const addNewMeme = () => {
           })
           .catch(error=>
             console.error("Error:",error))
+
+            memeDetails(newData)
+
+            navMenu(newData)
   });
 };
+addNewMeme()
