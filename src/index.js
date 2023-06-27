@@ -5,8 +5,10 @@
 let currentMeme;
 let navBar = document.getElementById("meme-menu");
 let memeData;
+let menuImg;
 // const codingMemesAPI = "https://meme-api.com/gimme/ProgrammerHumor/10/";
 const memesAPI = "http://localhost:3000/memes";
+const imageLibrary = "http://localhost:3000/meme_library";
 
 function loadMemes() {
   fetch(memesAPI)
@@ -19,12 +21,13 @@ function loadMemes() {
 
       memeDetails(APIData[0]);
       // console.log(APIData[0].image);
+      addNewMeme();
     });
 }
 loadMemes();
 
 function navMenu(memeData) {
-  const menuImg = document.createElement("img");
+  menuImg = document.createElement("img");
 
   // console.log(memeData);
   menuImg.src = memeData.image;
@@ -35,7 +38,6 @@ function navMenu(memeData) {
     memeDetails(memeData);
   });
 }
-
 
 function memeDetails(data) {
   currentMeme = memeData;
@@ -66,7 +68,6 @@ function memeDetails(data) {
 // console.log(title);
 //}
 
-
 //function to add new meme
 const addNewMeme = () => {
   const newMeme = document.getElementById("new-meme");
@@ -85,25 +86,66 @@ const addNewMeme = () => {
       image: newImg,
     };
 
-    
     //re-fetch local server to add object data to
-    fetch(memesAPI,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body : JSON.stringify(newData)})
-          .then(resp=>resp.json())
-          .then(responseData=>{
-            console.log("Response:",responseData)
-          })
-          .catch(error=>
-            console.error("Error:",error))
+    fetch(memesAPI, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((resp) => resp.json())
+      .then((responseData) => {
+        console.log("Response:", responseData);
+      })
+      .catch((error) => console.error("Error:", error));
 
-            memeDetails(newData)
+    memeDetails(newData);
 
-            navMenu(newData)
+    navMenu(newData);
   });
 };
-addNewMeme()
+
+addNewMeme();
+
+function selectMemeImage() {
+  const button = document.getElementById("image-library");
+
+  button.addEventListener("click", () => {
+    // when button is clicked the user can add meme top comment and bottom comment to images from database
+    while (navBar.firstChild) {
+      navBar.removeChild(navBar.firstChild);
+    }
+    fetch(imageLibrary)
+      .then((resp) => resp.json())
+
+      .then((memeLib) => {
+        memeData = memeLib;
+
+        console.log(memeData);
+        memeData.forEach((memeData) => navMenu(memeData));
+        memeDetails(memeData[0]);
+        // console.log(APIData[0].image);
+        addNewMeme();
+        // memeDetails(APIData[0]);
+        // console.log(APIData[0].image);
+        addNewMeme();
+      });
+
+    // pulls data from meme-library and populates to the navBar
+  });
+}
+
+selectMemeImage();
+
+function homeButton() {
+  const button = document.getElementById("home");
+
+  button.addEventListener("click", () => {
+    while (navBar.firstChild) {
+      navBar.removeChild(navBar.firstChild);
+    }
+    loadMemes();
+  });
+}
+homeButton();
