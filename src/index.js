@@ -145,3 +145,6 @@ function homeButton() {
 }
 homeButton();
 
+const likeButton = ()=>{
+  const likeButton = document.getElementById("like")
+}
