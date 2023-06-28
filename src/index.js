@@ -239,17 +239,4 @@ async function randomGamingMemes() {
   });
 }
 randomGamingMemes();
-// async function loadRedditMemes() {
-//   await fetch(memesAPI)
-//     .then((resp) => resp.json())
-
-//     .then((APIData) => {
-//       memeData = APIData.memes
-//       // console.log(memeData);
-//       memeData.forEach((memeData) => navMenu(memeData));
-
-//       memeDetails(APIData[0]);
-//       // console.log(APIData[0].image);
-//       addNewMeme();
-//     });
-// }
+// test
