@@ -122,17 +122,12 @@ function selectMemeImage() {
       .then((memeLib) => {
         memeData = memeLib;
 
-        console.log(memeData);
+        // console.log(memeData);
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
-        // console.log(APIData[0].image);
-        addNewMeme();
-        // memeDetails(APIData[0]);
-        // console.log(APIData[0].image);
+
         addNewMeme();
       });
-
-    // pulls data from meme-library and populates to the navBar
   });
 }
 
@@ -149,3 +144,4 @@ function homeButton() {
   });
 }
 homeButton();
+

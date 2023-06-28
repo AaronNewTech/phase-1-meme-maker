@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Meme Maker</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script defer type="text/javascript" src="./src/index.js"></script>
@@ -22,6 +22,10 @@
         <span class="btn-fill-center-text btn-fill-center-text--gray"
           >Home</span
         >
+      </button>
+
+      <button id="favorited-memes" class="btn btn-fill-center">
+        <span class="btn-fill-center-text btn-fill-center-text--gray">Favorite Memes List</span>
       </button>
 
       <!-- <button id="coding-memes" class="btn btn-fill-center">
@@ -59,8 +63,10 @@
         alt="Insert Image Here"
       />
       <h2 id="name">Name Goes Here</h2>
+      <button id="like">Like</button>
       <h2 class="top-comment">Insert Top Comment</h2>
       <h2 class="bottom-comment">Insert Bottom Comment Here</h2>
+      
     </div>
     <!-- <h2 class="name">Insert Name Here</h2>
     <h2>Rating:</h2>
@@ -78,7 +84,6 @@
       <textarea name="new-comment" id="new-top-comment"></textarea>
       <label for="new--bottom-comment">Bottom Comment: </label>
       <textarea name="new-comment" id="new-bottom-comment"></textarea>
-      
 
       <input type="submit" value="Create" />
     </form>
