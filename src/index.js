@@ -289,7 +289,7 @@ function clickDeleteButton(data) {
 // }
 // clickCreateButton();
 
-const likedMemesList = () => {
+async function likedMemesList()  {
   const button = document.getElementById("liked-memes");
   // currentMemeID = userMemesAPI
   
@@ -309,15 +309,7 @@ const likedMemesList = () => {
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
         console.log(likedMemes)
-        // addNewMeme();
-        // const deleteDiv = document.getElementById("delete");
-        // const deleteButton = document.createElement("button");
-        // deleteButton.textContent = "Delete";
-        // deleteButton.setAttribute("id", "delete-button");
-
-        // console.log(deleteButton);
-        // deleteDiv.append(deleteButton);
-        // clickDeleteButton();
+        
       });
   });
 };
