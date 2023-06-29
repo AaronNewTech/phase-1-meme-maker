@@ -17,6 +17,7 @@ const randomMovieMemesAPI = "https://meme-api.com/gimme/moviememes/10";
 
 const memesAPI = "http://localhost:3000/memes";
 const imageLibrary = "http://localhost:3000/meme_library";
+const likedMemesAPI = "http://localhost:3000/liked_memes";
 const userMemes = "http://localhost:3000/user_memes";
 
 async function loadMemes() {
@@ -50,8 +51,8 @@ const navMenu = (memeData) => {
 
 const memeDetails = (data) => {
   currentMeme = data;
-  const name = document.getElementById("title");
-  name.textContent = data.title;
+  const title = document.getElementById("title");
+  title.textContent = data.title;
 
   const image = document.querySelector(".detail-image");
   image.src = data.url;
@@ -81,7 +82,7 @@ const addNewMeme = () => {
       name: newName,
       top_comment: newTopText,
       bottom_comment: newBottomText,
-      image: newImg,
+      url: newImg,
     };
 
     //re-fetch local server to add object data to
@@ -110,6 +111,8 @@ const selectMemeImage = () => {
   const button = document.getElementById("image-library");
 
   button.addEventListener("click", () => {
+    let details = document.getElementById('meme-detail')
+    details.style.display = 'initial'
     // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
@@ -124,6 +127,12 @@ const selectMemeImage = () => {
         memeDetails(memeData[0]);
 
         addNewMeme();
+        const deleteDiv = document.getElementById('delete')
+        const deleteButton = document.createElement('button')
+        deleteButton.textContent = 'Delete'
+        deleteButton.setAttribute("id", "delete-button");
+        console.log(deleteButton)
+        deleteDiv.append(deleteButton)
       });
   });
 };
@@ -134,8 +143,14 @@ const homeButton = () => {
   const button = document.getElementById("home");
 
   button.addEventListener("click", () => {
+    let details = document.getElementById('meme-detail')
+    details.style.display = 'initial'
+
     while (navBar.firstChild) {
+      
+      
       navBar.removeChild(navBar.firstChild);
+      
     }
     loadMemes();
   });
@@ -149,13 +164,72 @@ const likeButton = (memeData) => {
     currentMeme.liked = !currentMeme.liked;
     likeButton.textContent = currentMeme.liked ? "Unlike" : "Like";
     console.log("Like status:", likeButton);
+    if (currentMeme) {
+      const newData = {
+        title: currentMeme.title,
+        top_comment: currentMeme.top_comment,
+        bottom_comment: currentMeme.bottom_comment,
+        url: currentMeme.url,
+      };
+  
+      //re-fetch local server to add object data to
+      fetch(likedMemesAPI, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newData),
+      })
+        .then((resp) => resp.json())
+        .then((responseData) => {
+          console.log("Response:", responseData);
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+
   });
 };
+
+function deleteButton() {
+  const deleteButton = document.getElementById('delete-button')
+
+  deleteButton.addEventListener('click', () => {
+    const cry = document.createElement("audio");
+        cry.src = ("/Users/aaronsmith/Development/code/phase-1/phase-1-meme-maker/sounds/bestcryever.mp3?raw=true")
+        function play() {
+          cry.play() 
+        }
+  setTimeout(play, 500);
+  })
+}
+
+async function likedMemesList() {
+  const button = document.getElementById("liked-memes");
+
+  button.addEventListener("click", () => {
+    // when button is clicked the user can add meme top comment and bottom comment to images from database
+    while (navBar.firstChild) {
+      navBar.removeChild(navBar.firstChild);
+    }
+
+    let details = document.getElementById('meme-detail')    
+    // let detailRemove = document.getElementById('meme-detail')
+    
+    details.style.display = 'none'
+    
+        
+      });
+      
+  
+}
+likedMemesList();
 
 async function randomCodingMemes() {
   const button = document.getElementById("coding-memes");
 
   button.addEventListener("click", () => {
+    let details = document.getElementById('meme-detail')
+    details.style.display = 'initial'
     // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
@@ -178,6 +252,8 @@ async function randomSportsMemes() {
   const button = document.getElementById("sports-memes");
 
   button.addEventListener("click", () => {
+    let details = document.getElementById('meme-detail')
+    details.style.display = 'initial'
     // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
@@ -200,6 +276,8 @@ async function randomMovieMemes() {
   const button = document.getElementById("movie-memes");
 
   button.addEventListener("click", () => {
+    let details = document.getElementById('meme-detail')
+    details.style.display = 'initial'
     // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
@@ -218,10 +296,16 @@ async function randomMovieMemes() {
 }
 randomMovieMemes();
 
+
+
+
+
 async function randomGamingMemes() {
   const button = document.getElementById("gaming-memes");
 
   button.addEventListener("click", () => {
+    let details = document.getElementById('meme-detail')
+    details.style.display = 'initial'
     // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
@@ -240,3 +324,4 @@ async function randomGamingMemes() {
 }
 randomGamingMemes();
 // test
+

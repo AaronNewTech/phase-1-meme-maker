@@ -2,7 +2,7 @@
   margin: 0;
   font-family: Impact, Helvetica, sans-serif;
   box-sizing: border-box;
-  
+
   color: white;
   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
     -1px -1px #000, 1px -1px #000, -1px 1px #000;
@@ -50,7 +50,6 @@ header {
 }
 
 #meme-menu {
-  
   display: flex;
   overflow-x: auto;
   margin: 1rem 0;
@@ -108,7 +107,9 @@ header {
   margin-top: 20px;
   height: 60px;
   width: 90px;
-  cursor: url("https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/images/brent%20thumbs%20up%20bigger.png?raw=true") 55 61, auto;             
+  cursor: url("https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/images/brent%20thumbs%20up%20bigger.png?raw=true")
+      55 61,
+    auto;
 }
 
 form {
@@ -147,4 +148,11 @@ form h4 {
   margin: 0.5rem 0;
   color: white;
   background-color: black;
+}
+#bannerimage {
+  width: 100%;
+  background-image: url(https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/images/Top%20Banner.png?raw=true);
+  height: 362px;
+  background-position: center;
+  object-fit: fill;
 }
