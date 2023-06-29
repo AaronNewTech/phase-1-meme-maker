@@ -444,6 +444,14 @@ const hoverFunctions = ()=>{
   likedMemesHover.addEventListener("mouseout",(event)=>{
     event.target.style.color ="";
   }))
+
+  const createdMemesListHover = document.getElementById("created-memes");
+  createdMemesListHover.addEventListener("mouseover",(event)=>{
+    event.target.style.color = "red";
+  },
+  createdMemesListHover.addEventListener("mouseout",(event)=>{
+    event.target.style.color ="";
+  }))
   
   const browseMemesHover = document.getElementById("dropbtn");
   browseMemesHover.addEventListener("mouseover",(event)=>{
