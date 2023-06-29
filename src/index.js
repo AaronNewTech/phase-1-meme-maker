@@ -28,17 +28,17 @@ async function loadMemes() {
 
     .then((APIData) => {
       memeData = APIData;
-      
+
       memeData.forEach((memeData) => navMenu(memeData));
 
       memeDetails(APIData[0]);
-      
+
       likeButton();
     });
 }
 loadMemes();
 
-const navMenu = (memeData) => {
+async function navMenu(memeData){
   menuImg = document.createElement("img");
 
   menuImg.src = memeData.url;
@@ -69,7 +69,7 @@ const memeDetails = (data) => {
 };
 
 //function to add new meme
-const addNewMeme = (data) => {
+async function addNewMeme(data){
   currentMeme = data;
   const newMeme = document.getElementById("new-meme");
   newMeme.addEventListener("submit", (e) => {
@@ -78,17 +78,14 @@ const addNewMeme = (data) => {
     let newImg = document.getElementById("new-image").value;
     const newTopText = document.getElementById("new-top-comment").value;
     const newBottomText = document.getElementById("new-bottom-comment").value;
-    
 
     if (newImg == "") {
-      
-      newImg = currentMeme.url
+      newImg = currentMeme.url;
     }
 
     if (newName == "") {
-      newName = currentMeme.title
+      newName = currentMeme.title;
     }
-    
 
     const wow = document.createElement("audio");
     wow.src =
@@ -125,7 +122,7 @@ const addNewMeme = (data) => {
 
 addNewMeme();
 
-const selectMemeImage = () => {
+async function selectMemeImage() {
   const button = document.getElementById("image-library");
 
   button.addEventListener("click", () => {
@@ -174,10 +171,10 @@ const homeButton = () => {
 };
 homeButton();
 
-const createdMemes = () => {
+async function createdMemes(){
   const button = document.getElementById("created-memes");
   // currentMemeID = userMemesAPI
-  
+
   button.addEventListener("click", () => {
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
@@ -193,7 +190,7 @@ const createdMemes = () => {
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
-        console.log(userMemes)
+        console.log(userMemes);
         // addNewMeme();
         // const deleteDiv = document.getElementById("delete");
         // const deleteButton = document.createElement("button");
@@ -206,9 +203,9 @@ const createdMemes = () => {
       });
   });
 };
-createdMemes()
+createdMemes();
 
-const likeButton = (memeData) => {
+async function likeButton(memeData){
   // currentMeme = memeData;
   const likeButton = document.getElementById("like");
   likeButton.addEventListener("click", () => {
@@ -216,19 +213,18 @@ const likeButton = (memeData) => {
     likeButton.textContent = currentMeme.liked ? "Unlike" : "Like";
     console.log("Like status:", likeButton);
 
-    currentMemeID = currentMeme.id + 100
+    currentMemeID = currentMeme.id + 100;
 
     const newData = {
-        id: currentMemeID,
-        title: currentMeme.title,
-        top_comment: currentMeme.top_comment,
-        bottom_comment: currentMeme.bottom_comment,
-        url: currentMeme.url,
-      };
-  
-  console.log(currentMemeID)
-  if (currentMeme.liked === true) {
-      
+      id: currentMemeID,
+      title: currentMeme.title,
+      top_comment: currentMeme.top_comment,
+      bottom_comment: currentMeme.bottom_comment,
+      url: currentMeme.url,
+    };
+
+    console.log(currentMemeID);
+    if (currentMeme.liked === true) {
       //re-fetch local server to add object data to
       fetch(likedMemesAPI, {
         method: "POST",
@@ -243,9 +239,8 @@ const likeButton = (memeData) => {
         })
         .catch((error) => console.error("Error:", error));
     }
-    if (currentMeme.liked === false){
-      
-      fetch('http://localhost:3000/liked_memes', {
+    if (currentMeme.liked === false) {
+      fetch("http://localhost:3000/liked_memes", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -257,42 +252,28 @@ const likeButton = (memeData) => {
           console.log("Response:", responseData);
         })
         .catch((error) => console.error("Error:", error));
-    }//
-  }); 
+    } //
+  });
 };
 
-function clickDeleteButton(data) {
 
-  currentMemeID = data.id
-  const deleteButtons = document.getElementById("delete-button");
+function clickDeleteButton(data) {
+  // currentMemeID = data.id;
+  // console.log(currentMemeID)
+  const deleteSound = document.getElementById("delete-button");
   // const cry = document.getElementById('cry')
-  deleteButtons.addEventListener("click", () => {
+  deleteSound.addEventListener("click", () => {
     const cry = document.createElement("audio");
     cry.src =
       "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/bestcryever.mp3?raw=true";
     cry.play();
-
-
   });
 }
-
-// function clickCreateButton() {
-//   const createButton = document.getElementById("new-meme");
-//   // const cry = document.getElementById('cry')
-//   createButton.addEventListener("submit", (e) => {
-//     // e.preventDefault();
-//     const wow = document.createElement("audio");
-//     wow.src =
-//       "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/greenscreen-wow.mp3?raw=true";
-//     wow.play();
-//   });
-// }
-// clickCreateButton();
-
-async function likedMemesList()  {
+clickDeleteButton()
+async function likedMemesList() {
   const button = document.getElementById("liked-memes");
   // currentMemeID = userMemesAPI
-  
+
   button.addEventListener("click", () => {
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
@@ -308,12 +289,11 @@ async function likedMemesList()  {
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
-        console.log(likedMemes)
-        
+        console.log(likedMemes);
       });
   });
-};
-likedMemesList()
+}
+likedMemesList();
 
 async function randomCodingMemes() {
   const button = document.getElementById("coding-memes");
@@ -411,78 +391,107 @@ async function randomGamingMemes() {
 }
 randomGamingMemes();
 
-
-const hoverFunctions = ()=>{
+const hoverFunctions = () => {
   const homeButtonHover = document.getElementById("home");
-  homeButtonHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  homeButtonHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  homeButtonHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    homeButtonHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const createMemeHover = document.getElementById("image-library");
-  createMemeHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  createMemeHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  createMemeHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    createMemeHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const likedMemesHover = document.getElementById("liked-memes");
-  likedMemesHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  likedMemesHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
+  likedMemesHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    likedMemesHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
 
   const createdMemesListHover = document.getElementById("created-memes");
-  createdMemesListHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  createdMemesListHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  createdMemesListHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    createdMemesListHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const browseMemesHover = document.getElementById("dropbtn");
-  browseMemesHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  browseMemesHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  browseMemesHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    browseMemesHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const codeMemesHover = document.getElementById("coding-memes");
-  codeMemesHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  codeMemesHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  codeMemesHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    codeMemesHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const sportsMemesHover = document.getElementById("sports-memes");
-  sportsMemesHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  sportsMemesHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  sportsMemesHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    sportsMemesHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const movieMemesHover = document.getElementById("movie-memes");
-  movieMemesHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  movieMemesHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))
-  
+  movieMemesHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    movieMemesHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+
   const gamingMemesHover = document.getElementById("gaming-memes");
-  gamingMemesHover.addEventListener("mouseover",(event)=>{
-    event.target.style.color = "red";
-  },
-  gamingMemesHover.addEventListener("mouseout",(event)=>{
-    event.target.style.color ="";
-  }))}
-  
-  hoverFunctions()
+  gamingMemesHover.addEventListener(
+    "mouseover",
+    (event) => {
+      event.target.style.color = "red";
+    },
+    gamingMemesHover.addEventListener("mouseout", (event) => {
+      event.target.style.color = "";
+    })
+  );
+};
+
+hoverFunctions();
+
+console.log(currentMemeID)
