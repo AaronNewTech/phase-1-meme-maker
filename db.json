@@ -63,188 +63,6 @@
       "bottom_comment": "Aliens",
       "url": "https://i.imgflip.com/26am.jpg",
       "liked": false
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 9
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 10
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 11
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 12
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 13
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 14
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 15
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 16
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 17
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 18
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 19
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fghhgf",
-      "bottom_comment": "hgfdghf",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 20
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "vcbfdg",
-      "bottom_comment": "sfdfdfs",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 21
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "vcbfdg",
-      "bottom_comment": "sfdfdfs",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 22
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fdsgg",
-      "bottom_comment": "dffdas",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 23
-    },
-    {
-      "name": "Aaron Smith",
-      "top_comment": "fdsgg",
-      "bottom_comment": "dffdas",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 24
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 25
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 26
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 27
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 28
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 29
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 30
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 31
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 32
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 33
-    },
-    {
-      "name": "",
-      "top_comment": "",
-      "bottom_comment": "",
-      "url": "",
-      "id": 34
     }
   ],
   "meme_library": [
@@ -394,6 +212,7 @@
       "id": 9,
       "liked": false
     }
+    
   ],
   "liked_memes": [
     {
@@ -403,20 +222,6 @@
       "url": "https://i.imgflip.com/261o3j.jpg",
       "id": 9,
       "liked": true
-    },
-    {
-      "id": 101,
-      "title": "Boromir",
-      "top_comment": "One does not simply",
-      "bottom_comment": "convert data types in python",
-      "url": "https://i.imgflip.com/1bij.jpg"
-    },
-    {
-      "id": 102,
-      "title": "Hide The Pain Harold",
-      "top_comment": "What could go wrong with learning a years worth of coding in 3 months",
-      "bottom_comment": "Well I used to be Chris Hemsworth",
-      "url": "https://i.imgflip.com/gk5el.jpg"
     }
   ]
 }

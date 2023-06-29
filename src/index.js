@@ -18,7 +18,7 @@ const randomMovieMemesAPI = "https://meme-api.com/gimme/moviememes/10";
 const memesAPI = "http://localhost:3000/memes";
 const imageLibrary = "http://localhost:3000/meme_library";
 const likedMemesAPI = "http://localhost:3000/liked_memes";
-const userMemes = "http://localhost:3000/user_memes";
+const userMemesAPI = "http://localhost:3000/user_memes";
 
 async function loadMemes() {
   await fetch(memesAPI)
@@ -26,12 +26,11 @@ async function loadMemes() {
 
     .then((APIData) => {
       memeData = APIData;
-      // console.log(memeData);
+      
       memeData.forEach((memeData) => navMenu(memeData));
 
       memeDetails(APIData[0]);
-      // console.log(APIData[0].image);
-      addNewMeme();
+      
       likeButton();
     });
 }
@@ -62,31 +61,48 @@ const memeDetails = (data) => {
   // console.log(topText);
   const bottomComment = document.querySelector(".bottom-comment");
   bottomComment.textContent = data.bottom_comment;
-  
+
   const memeLiked = document.getElementById("like");
   memeLiked.textContent = data.liked ? "Unlike" : "Like";
 };
 
 //function to add new meme
-const addNewMeme = () => {
+const addNewMeme = (data) => {
+  currentMeme = data;
   const newMeme = document.getElementById("new-meme");
   newMeme.addEventListener("submit", (e) => {
     e.preventDefault();
-    const newName = document.getElementById("new-name").value;
-    const newImg = document.getElementById("new-image").value;
+    let newName = document.getElementById("new-name").value;
+    let newImg = document.getElementById("new-image").value;
     const newTopText = document.getElementById("new-top-comment").value;
     const newBottomText = document.getElementById("new-bottom-comment").value;
+    
 
+    if (newImg == "") {
+      
+      newImg = currentMeme.url
+    }
+
+    if (newName == "") {
+      newName = currentMeme.title
+    }
+    
+
+    const wow = document.createElement("audio");
+    wow.src =
+      "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/greenscreen-wow.mp3?raw=true";
+    wow.play();
     //new object holder for submitted information
     const newData = {
-      name: newName,
+      title: newName,
       top_comment: newTopText,
       bottom_comment: newBottomText,
       url: newImg,
+      liked: true,
     };
 
     //re-fetch local server to add object data to
-    fetch(memesAPI, {
+    fetch(userMemesAPI, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,9 +115,9 @@ const addNewMeme = () => {
       })
       .catch((error) => console.error("Error:", error));
 
-    memeDetails(newData);
+    // memeDetails(newData);
 
-    navMenu(newData);
+    // navMenu(newData);
   });
 };
 
@@ -126,7 +142,7 @@ const selectMemeImage = () => {
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
 
-        addNewMeme();
+        // addNewMeme();
         const deleteDiv = document.getElementById("delete");
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
@@ -220,18 +236,18 @@ function clickDeleteButton() {
   });
 }
 
-function clickCreateButton() {
-  const createButton = document.getElementById("new-meme");
-  // const cry = document.getElementById('cry')
-  createButton.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const wow = document.createElement("audio");
-    wow.src =
-      "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/greenscreen-wow.mp3?raw=true";
-    wow.play();
-  });
-}
-clickCreateButton();
+// function clickCreateButton() {
+//   const createButton = document.getElementById("new-meme");
+//   // const cry = document.getElementById('cry')
+//   createButton.addEventListener("submit", (e) => {
+//     // e.preventDefault();
+//     const wow = document.createElement("audio");
+//     wow.src =
+//       "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/greenscreen-wow.mp3?raw=true";
+//     wow.play();
+//   });
+// }
+// clickCreateButton();
 
 async function likedMemesList() {
   const button = document.getElementById("liked-memes");
@@ -346,3 +362,7 @@ async function randomGamingMemes() {
 }
 randomGamingMemes();
 // test
+
+const navMouseOver = () =>{
+  
+}
