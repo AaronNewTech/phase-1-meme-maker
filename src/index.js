@@ -22,7 +22,14 @@ const imageLibrary = "http://localhost:3000/meme_library";
 const likedMemesAPI = "http://localhost:3000/liked_memes";
 const userMemesAPI = "http://localhost:3000/user_memes";
 
+let deleteButtonVisible = (document.getElementById(
+  "delete-button"
+).style.visibility = "hidden");
+
 async function loadMemes() {
+  deleteButtonVisible = (document.getElementById(
+    "delete-button"
+  ).style.visibility = "hidden");
   await fetch(memesAPI)
     .then((resp) => resp.json())
 
@@ -38,7 +45,7 @@ async function loadMemes() {
 }
 loadMemes();
 
-async function navMenu(memeData){
+async function navMenu(memeData) {
   menuImg = document.createElement("img");
 
   menuImg.src = memeData.url;
@@ -48,10 +55,14 @@ async function navMenu(memeData){
   menuImg.addEventListener("click", () => {
     memeDetails(memeData);
   });
-};
+}
 
 const memeDetails = (data) => {
   currentMeme = data;
+
+  currentMemeID = data.id;
+  console.log(currentMemeID);
+
   const title = document.getElementById("title");
   title.textContent = data.title;
 
@@ -69,7 +80,7 @@ const memeDetails = (data) => {
 };
 
 //function to add new meme
-async function addNewMeme(data){
+async function addNewMeme(data) {
   currentMeme = data;
   const newMeme = document.getElementById("new-meme");
   newMeme.addEventListener("submit", (e) => {
@@ -78,7 +89,7 @@ async function addNewMeme(data){
     let newImg = document.getElementById("new-image").value;
     const newTopText = document.getElementById("new-top-comment").value;
     const newBottomText = document.getElementById("new-bottom-comment").value;
-
+    currentMemeID = currentMeme.id + 100;
     if (newImg == "") {
       newImg = currentMeme.url;
     }
@@ -118,7 +129,7 @@ async function addNewMeme(data){
 
     // navMenu(newData);
   });
-};
+}
 
 addNewMeme();
 
@@ -126,6 +137,9 @@ async function selectMemeImage() {
   const button = document.getElementById("image-library");
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = (document.getElementById(
+      "delete-button"
+    ).style.visibility = "hidden");
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -152,7 +166,7 @@ async function selectMemeImage() {
         // clickDeleteButton();
       });
   });
-};
+}
 
 selectMemeImage();
 
@@ -171,11 +185,15 @@ const homeButton = () => {
 };
 homeButton();
 
-async function createdMemes(){
+async function createdMemes() {
   const button = document.getElementById("created-memes");
   // currentMemeID = userMemesAPI
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = document.getElementById(
+      "delete-button"
+    ).style.visibility = "visible";
+
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -190,7 +208,7 @@ async function createdMemes(){
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
-        console.log(userMemes);
+
         // addNewMeme();
         // const deleteDiv = document.getElementById("delete");
         // const deleteButton = document.createElement("button");
@@ -202,18 +220,18 @@ async function createdMemes(){
         // clickDeleteButton();
       });
   });
-};
+}
 createdMemes();
 
-async function likeButton(memeData){
+async function likeButton(memeData) {
   // currentMeme = memeData;
   const likeButton = document.getElementById("like");
   likeButton.addEventListener("click", () => {
     currentMeme.liked = !currentMeme.liked;
     likeButton.textContent = currentMeme.liked ? "Unlike" : "Like";
-    console.log("Like status:", likeButton);
+    // console.log("Like status:", likeButton);
 
-    currentMemeID = currentMeme.id + 100;
+    currentMemeID = currentMeme.id;
 
     const newData = {
       id: currentMemeID,
@@ -221,9 +239,9 @@ async function likeButton(memeData){
       top_comment: currentMeme.top_comment,
       bottom_comment: currentMeme.bottom_comment,
       url: currentMeme.url,
+      liked: true,
     };
 
-    console.log(currentMemeID);
     if (currentMeme.liked === true) {
       //re-fetch local server to add object data to
       fetch(likedMemesAPI, {
@@ -240,22 +258,14 @@ async function likeButton(memeData){
         .catch((error) => console.error("Error:", error));
     }
     if (currentMeme.liked === false) {
-      fetch("http://localhost:3000/liked_memes", {
+      fetch(`http://localhost:3000/liked_memes/${currentMeme.id}`, {
         method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newData),
       })
         .then((resp) => resp.json())
-        .then((responseData) => {
-          console.log("Response:", responseData);
-        })
-        .catch((error) => console.error("Error:", error));
+        .then(() => currentMeme.remove());
     } //
   });
-};
-
+}
 
 function clickDeleteButton(data) {
   // currentMemeID = data.id;
@@ -267,14 +277,26 @@ function clickDeleteButton(data) {
     cry.src =
       "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/bestcryever.mp3?raw=true";
     cry.play();
+    fetch(`http://localhost:3000/user_memes/${currentMeme.id}`, {
+      method: "DELETE",
+    })
+      .then((resp) => resp.json())
+      .then(() => currentMeme.remove());
+
+    // fetch(`http://localhost:3000/${currentMemeID.id}`, {
+    //   method: "DELETE",
+    // });
   });
 }
-clickDeleteButton()
+clickDeleteButton();
 async function likedMemesList() {
   const button = document.getElementById("liked-memes");
   // currentMemeID = userMemesAPI
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = (document.getElementById(
+      "delete-button"
+    ).style.visibility = "hidden");
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -289,7 +311,6 @@ async function likedMemesList() {
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
-        console.log(likedMemes);
       });
   });
 }
@@ -299,6 +320,9 @@ async function randomCodingMemes() {
   const button = document.getElementById("coding-memes");
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = (document.getElementById(
+      "delete-button"
+    ).style.visibility = "hidden");
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -323,6 +347,9 @@ async function randomSportsMemes() {
   const button = document.getElementById("sports-memes");
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = (document.getElementById(
+      "delete-button"
+    ).style.visibility = "hidden");
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -347,6 +374,9 @@ async function randomMovieMemes() {
   const button = document.getElementById("movie-memes");
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = (document.getElementById(
+      "delete-button"
+    ).style.visibility = "hidden");
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -368,9 +398,13 @@ async function randomMovieMemes() {
 randomMovieMemes();
 
 async function randomGamingMemes() {
+  
   const button = document.getElementById("gaming-memes");
 
   button.addEventListener("click", () => {
+    deleteButtonVisible = (document.getElementById(
+      "delete-button"
+    ).style.visibility = "hidden");
     let details = document.getElementById("meme-detail");
     details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
@@ -493,5 +527,3 @@ const hoverFunctions = () => {
 };
 
 hoverFunctions();
-
-console.log(currentMemeID)

@@ -209,33 +209,18 @@
       "top_comment": "Coding your HTML and Javascript",
       "bottom_comment": "Then coding your CSS",
       "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 9,
+      "id": 998,
       "liked": false
-    },
-    {
-      "title": "Distracted Boyfriend",
-      "top_comment": "test",
-      "bottom_comment": "test",
-      "url": "https://i.imgflip.com/1ur9b0.jpg",
-      "liked": true,
-      "id": 10
     }
   ],
   "liked_memes": [
     {
-      "title": "Run away balloon",
-      "top_comment": "Coding your HTML and Javascript",
-      "bottom_comment": "Then coding your CSS",
-      "url": "https://i.imgflip.com/261o3j.jpg",
-      "id": 100,
-      "liked": true
-    },
-    {
-      "id": 102,
+      "id": 9999,
       "title": "Hide The Pain Harold",
       "top_comment": "What could go wrong with learning a years worth of coding in 3 months",
       "bottom_comment": "Well I used to be Chris Hemsworth",
-      "url": "https://i.imgflip.com/gk5el.jpg"
+      "url": "https://i.imgflip.com/gk5el.jpg",
+      "liked": true
     }
   ]
 }
