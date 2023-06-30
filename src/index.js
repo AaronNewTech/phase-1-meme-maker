@@ -81,6 +81,9 @@ async function addNewMeme(data) {
   const newMeme = document.getElementById("new-meme");
   newMeme.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    let resest = document.getElementById("new-meme").reset();
+
     let newName = document.getElementById("new-name").value;
     let newImg = document.getElementById("new-image").value;
     const newTopText = document.getElementById("new-top-comment").value;
@@ -385,7 +388,7 @@ const hoverFunctions = () => {
   homeButtonHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     homeButtonHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -396,7 +399,7 @@ const hoverFunctions = () => {
   createMemeHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     createMemeHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -407,7 +410,7 @@ const hoverFunctions = () => {
   likedMemesHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     likedMemesHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -418,7 +421,7 @@ const hoverFunctions = () => {
   createdMemesListHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     createdMemesListHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -429,7 +432,7 @@ const hoverFunctions = () => {
   browseMemesHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     browseMemesHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -440,7 +443,7 @@ const hoverFunctions = () => {
   codeMemesHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     codeMemesHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -451,7 +454,7 @@ const hoverFunctions = () => {
   sportsMemesHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     sportsMemesHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -462,7 +465,7 @@ const hoverFunctions = () => {
   movieMemesHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     movieMemesHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";
@@ -473,7 +476,7 @@ const hoverFunctions = () => {
   gamingMemesHover.addEventListener(
     "mouseover",
     (event) => {
-      event.target.style.color = "red";
+      event.target.style.color = "#e8aa20";
     },
     gamingMemesHover.addEventListener("mouseout", (event) => {
       event.target.style.color = "";

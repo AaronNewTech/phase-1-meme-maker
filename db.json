@@ -35,7 +35,7 @@
     {
       "id": 5,
       "title": "Success Kid",
-      "top_comment": "When your code looks wrong",
+      "top_comment": "When you think your code is wrong",
       "bottom_comment": "then you console.log and its right",
       "url": "https://imgflip.com/s/meme/Success-Kid.jpg",
       "liked": false
@@ -276,7 +276,6 @@
       "url": "https://i.imgflip.com/26am.jpg",
       "liked": false
     }
-    
   ],
   "liked_memes": [
     {

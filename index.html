@@ -8,52 +8,68 @@
   </head>
 
   <body>
-    <div id="bannerimage"></div>
-    
+    <div id="banner-div"><img id="banner-img" src="https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/images/cropped_banner2.jpeg?raw=true"></div>
+
     <div class="navbar">
       <button id="home" class="btn btn-fill-center">
-        <span class="btn-fill-center-text btn-fill-center-text--gray">Home</span>
+        <span class="btn-fill-center-text btn-fill-center-text--gray"
+          >Home</span
+        >
       </button>
 
       <button id="image-library" class="btn btn-fill-center">
-        <span class="btn-fill-center-text btn-fill-center-text--gray">Create Meme From Image Library</span>
+        <span class="btn-fill-center-text btn-fill-center-text--gray"
+          >Create Meme From Library</span
+        >
       </button>
 
       <button id="liked-memes" class="btn btn-fill-center">
-        <span class="btn-fill-center-text btn-fill-center-text--gray">Liked Memes List</span>
+        <span class="btn-fill-center-text btn-fill-center-text--gray"
+          >Liked Memes</span
+        >
       </button>
 
       <button id="created-memes" class="btn btn-fill-center">
-        <span class="btn-fill-center-text btn-fill-center-text--gray">Created Memes List</span>
+        <span class="btn-fill-center-text btn-fill-center-text--gray"
+          >Created Memes</span
+        >
       </button>
 
       <div class="dropdown">
-          <button id="dropbtn" class="btn btn-fill-center">
-            <span class="btn-fill-center-text btn-fill-center-text--gray">Browse Memes</span>
-
-
+        <button id="dropbtn" class="btn btn-fill-center">
+          <span class="btn-fill-center-text btn-fill-center-text--gray"
+            >Browse Memes</span
+          >
         </button>
 
-        <div class="dropdown-content">
+        <div id="dropdown-body" class="dropdown-content">
           <button id="coding-memes" class="btn btn-fill-center">
-            <span class="btn-fill-center-text btn-fill-center-text--gray">View Random Coding Memes</span>
+            <span class="btn-fill-center-text btn-fill-center-text--gray"
+              >Random Coding Memes</span
+            >
           </button>
 
           <button id="sports-memes" class="btn btn-fill-center">
-            <span class="btn-fill-center-text btn-fill-center-text--gray">View Random Sports Memes</span>
+            <span class="btn-fill-center-text btn-fill-center-text--gray"
+              >Random Sports Memes</span
+            >
           </button>
 
           <button id="movie-memes" class="btn btn-fill-center">
-            <span class="btn-fill-center-text btn-fill-center-text--gray">View Random Movie Memes</span>
+            <span class="btn-fill-center-text btn-fill-center-text--gray"
+              >Random Movie Memes</span
+            >
           </button>
 
           <button id="gaming-memes" class="btn btn-fill-center">
-            <span class="btn-fill-center-text btn-fill-center-text--gray">View Random Gaming Memes</span>
+            <span class="btn-fill-center-text btn-fill-center-text--gray"
+              >Random Gaming Memes</span
+            >
           </button>
         </div>
       </div>
     </div>
-    
+
     <!-- Meme Menu -->
     <div id="meme-menu">
       <!--  Images Here -->
@@ -81,7 +97,7 @@
       <h4>Add New Meme</h4>
       <label for="name">Name: </label>
       <input type="text" name="name" id="new-name" />
-      <label for="image">Image: </label>
+      <label for="image">Image (Leave blank if not uploading image): </label>
       <input type="text" name="image" id="new-image" />
       <label for="new-top-comment">Top Comment: </label>
       <textarea name="new-comment" id="new-top-comment"></textarea>
@@ -90,8 +106,8 @@
 
       <input type="submit" value="Create" />
     </form>
-    <div id="delete"> <button id="delete-button">Delete</button></div>
-    
+    <div id="delete"><button id="delete-button">Delete</button></div>
+
     <!-- <audio id="cry"><source src="sounds/bestcryever.mp3" type="audio/mp3"></audio> -->
   </body>
 </html>
