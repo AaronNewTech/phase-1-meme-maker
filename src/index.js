@@ -89,7 +89,7 @@ async function addNewMeme(data) {
     let newImg = document.getElementById("new-image").value;
     const newTopText = document.getElementById("new-top-comment").value;
     const newBottomText = document.getElementById("new-bottom-comment").value;
-    currentMemeID = currentMeme.id + 100;
+    currentMemeID = currentMeme.id;
     if (newImg == "") {
       newImg = currentMeme.url;
     }
@@ -194,8 +194,8 @@ async function createdMemes() {
       "delete-button"
     ).style.visibility = "visible";
 
-    let details = document.getElementById("meme-detail");
-    details.style.display = "initial";
+    // let details = document.getElementById("meme-detail");
+    // details.style.display = "initial";
     // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
@@ -209,15 +209,6 @@ async function createdMemes() {
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
 
-        // addNewMeme();
-        // const deleteDiv = document.getElementById("delete");
-        // const deleteButton = document.createElement("button");
-        // deleteButton.textContent = "Delete";
-        // deleteButton.setAttribute("id", "delete-button");
-
-        // console.log(deleteButton);
-        // deleteDiv.append(deleteButton);
-        // clickDeleteButton();
       });
   });
 }
@@ -255,15 +246,18 @@ async function likeButton(memeData) {
         .then((responseData) => {
           console.log("Response:", responseData);
         })
-        .catch((error) => console.error("Error:", error));
+        .catch((error) => console.log("Error:", error));
+
     }
     if (currentMeme.liked === false) {
+      
       fetch(`http://localhost:3000/liked_memes/${currentMeme.id}`, {
         method: "DELETE",
       })
         .then((resp) => resp.json())
-        .then(() => currentMeme.remove());
-    } //
+        
+        
+    } 
   });
 }
 
