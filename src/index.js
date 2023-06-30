@@ -176,7 +176,6 @@ async function createdMemes() {
       "delete-button"
     ).style.visibility = "visible";
 
-    // when button is clicked the user can add meme top comment and bottom comment to images from database
     while (navBar.firstChild) {
       navBar.removeChild(navBar.firstChild);
     }
@@ -194,7 +193,6 @@ async function createdMemes() {
 createdMemes();
 
 async function likeButton(memeData) {
-  // currentMeme = memeData;
   const likeButton = document.getElementById("like");
   likeButton.addEventListener("click", () => {
     currentMeme.liked = !currentMeme.liked;
@@ -240,13 +238,11 @@ function clickDeleteButton(data) {
   deleteSound.addEventListener("click", () => {
     const cry = document.createElement("audio");
     cry.src =
-      "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/bestcryever.mp3?raw=true";
+      "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/bestcryeverdedit.mp3?raw=true";
     cry.play();
     fetch(`http://localhost:3000/user_memes/${currentMeme.id}`, {
       method: "DELETE",
-    })
-      .then((resp) => resp.json())
-      .then(() => currentMeme.remove());
+    }).then((resp) => resp.json());
   });
 }
 clickDeleteButton();
