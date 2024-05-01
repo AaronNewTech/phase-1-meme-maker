@@ -56,7 +56,6 @@ const memeDetails = (data) => {
   currentMeme = data;
 
   currentMemeID = data.id;
-  console.log(currentMemeID);
 
   const title = document.getElementById("title");
   title.textContent = data.title;
@@ -290,7 +289,7 @@ async function randomCodingMemes() {
 
       .then((codingMemes) => {
         memeData = codingMemes.memes;
-        console.log(memeData[0].url);
+        
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
@@ -317,7 +316,6 @@ async function randomSportsMemes() {
 
       .then((sportsMemes) => {
         memeData = sportsMemes.memes;
-        console.log(memeData[0].url);
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
@@ -344,7 +342,6 @@ async function randomMovieMemes() {
 
       .then((movieMemes) => {
         memeData = movieMemes.memes;
-        console.log(memeData[0].url);
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
@@ -371,7 +368,6 @@ async function randomGamingMemes() {
 
       .then((gmaingMemes) => {
         memeData = gmaingMemes.memes;
-        console.log(memeData[0].url);
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
