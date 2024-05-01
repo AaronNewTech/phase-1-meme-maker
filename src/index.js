@@ -1,5 +1,4 @@
 let currentMeme;
-
 let currentMemeID;
 let navBar = document.getElementById("meme-menu");
 let memeData;
@@ -82,8 +81,6 @@ async function addNewMeme(data) {
   newMeme.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let resest = document.getElementById("new-meme").reset();
-
     let newName = document.getElementById("new-name").value;
     let newImg = document.getElementById("new-image").value;
     const newTopText = document.getElementById("new-top-comment").value;
@@ -109,7 +106,7 @@ async function addNewMeme(data) {
       url: newImg,
       liked: true,
     };
-
+    let reset = document.getElementById("new-meme").reset();
     //re-fetch local server to add object data to
     fetch(userMemesAPI, {
       method: "POST",
