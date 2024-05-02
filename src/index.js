@@ -12,10 +12,10 @@ const randomGamingMemesAPI = "https://meme-api.com/gimme/gamingmemes/10";
 
 const randomMovieMemesAPI = "https://meme-api.com/gimme/moviememes/10";
 
-const memesAPI = "http://localhost:3000/memes";
-const imageLibrary = "http://localhost:3000/meme_library";
-const likedMemesAPI = "http://localhost:3000/liked_memes";
-const userMemesAPI = "http://localhost:3000/user_memes";
+const memesAPI = "https://meme-server.vercel.app/memes";
+const imageLibrary = "https://meme-server.vercel.app/meme_library";
+const likedMemesAPI = "https://meme-server.vercel.app/liked_memes";
+const userMemesAPI = "https://meme-server.vercel.app/user_memes";
 
 let deleteButtonVisible = (document.getElementById(
   "delete-button"
@@ -224,7 +224,7 @@ async function likeButton(memeData) {
         .catch((error) => console.log("Error:", error));
     }
     if (currentMeme.liked === false) {
-      fetch(`http://localhost:3000/liked_memes/${currentMeme.id}`, {
+      fetch(`https://meme-server.vercel.app/liked_memes/${currentMeme.id}`, {
         method: "DELETE",
       }).then((resp) => resp.json());
     }
@@ -239,7 +239,7 @@ function clickDeleteButton(data) {
     cry.src =
       "https://github.com/AaronNewTech/phase-1-meme-maker/blob/main/sounds/bestcryeverdedit.mp3?raw=true";
     cry.play();
-    fetch(`http://localhost:3000/user_memes/${currentMeme.id}`, {
+    fetch(`https://meme-server.vercel.app/user_memes/${currentMeme.id}`, {
       method: "DELETE",
     }).then((resp) => resp.json());
   });
@@ -289,7 +289,6 @@ async function randomCodingMemes() {
 
       .then((codingMemes) => {
         memeData = codingMemes.memes;
-        
 
         memeData.forEach((memeData) => navMenu(memeData));
         memeDetails(memeData[0]);
