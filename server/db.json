@@ -1,0 +1,288 @@
+{
+  "memes": [
+    {
+      "id": 1,
+      "title": "Boromir",
+      "top_comment": "One does not simply",
+      "bottom_comment": "convert data types in python",
+      "url": "https://i.imgflip.com/1bij.jpg",
+      "liked": false
+    },
+    {
+      "id": 2,
+      "title": "Hide The Pain Harold",
+      "top_comment": "What could go wrong with learning a years worth of coding in 3 months",
+      "bottom_comment": "Well I used to be Chris Hemsworth",
+      "url": "https://i.imgflip.com/gk5el.jpg",
+      "liked": false
+    },
+    {
+      "id": 3,
+      "title": "Drake",
+      "top_comment": "Looking up code on stackoverflow",
+      "bottom_comment": "Looking up code in last week's lab",
+      "url": "https://knowyourinternethome.files.wordpress.com/2018/12/no-yes-drake.jpg?w=640",
+      "liked": false
+    },
+    {
+      "id": 4,
+      "title": "Kayode Ewumi",
+      "top_comment": "Struggling with code and",
+      "bottom_comment": "you realize just go to discord",
+      "url": "https://i.imgflip.com/1l8lo8.jpg",
+      "liked": false
+    },
+    {
+      "id": 5,
+      "title": "Success Kid",
+      "top_comment": "When you think your code is wrong",
+      "bottom_comment": "then you console.log and its right",
+      "url": "https://imgflip.com/s/meme/Success-Kid.jpg",
+      "liked": false
+    },
+    {
+      "id": 6,
+      "title": "World's Most Interesting Man",
+      "top_comment": "I don't alawys code html",
+      "bottom_comment": "but when I do I copy and paste",
+      "url": "https://imgflip.com/s/meme/The-Most-Interesting-Man-In-The-World.jpg",
+      "liked": false
+    },
+    {
+      "id": 7,
+      "title": "Willy Wonka",
+      "top_comment": "Tell me again how you",
+      "bottom_comment": "destroyed the code challenge",
+      "url": "https://i.imgflip.com/b47pu.jpg?a468720",
+      "liked": false
+    },
+    {
+      "id": 8,
+      "title": "Giorgio A. Tsoukalos",
+      "top_comment": "Who finished my code?",
+      "bottom_comment": "Aliens",
+      "url": "https://i.imgflip.com/26am.jpg",
+      "liked": false
+    }
+  ],
+  "meme_library": [
+    {
+      "id": 1,
+      "title": "Distracted Boyfriend",
+      "url": "https://i.imgflip.com/1ur9b0.jpg",
+      "liked": false
+    },
+    {
+      "id": 2,
+      "title": "Running Away Balloon",
+      "url": "https://i.imgflip.com/261o3j.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Left Exit 12 Off Ramp",
+      "url": "https://i.imgflip.com/22bdq6.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Buff Doge vs. Cheems",
+      "url": "https://i.imgflip.com/43a45p.png"
+    },
+    {
+      "id": 5,
+      "title": "Change My Mind",
+      "url": "https://i.imgflip.com/24y43o.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Bernie I Am Once Again Asking For Your Support",
+      "url": "https://i.imgflip.com/3oevdk.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Waiting Skeleton",
+      "url": "https://i.imgflip.com/2fm6x.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Gru's Plan",
+      "url": "https://i.imgflip.com/26jxvz.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Epic Handshake",
+      "url": "https://i.imgflip.com/28j0te.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Batman Slapping Robin",
+      "url": "https://i.imgflip.com/9ehk.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Always Has Been",
+      "url": "https://i.imgflip.com/46e43q.png"
+    },
+    {
+      "id": 12,
+      "title": "Woman Yelling At Cat",
+      "url": "https://i.imgflip.com/345v97.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Expanding Brain",
+      "url": "https://i.imgflip.com/1jwhww.jpg"
+    },
+    {
+      "id": 14,
+      "title": "X,X Everywhere",
+      "url": "https://i.imgflip.com/1ihzfe.jpg"
+    },
+    {
+      "id": 15,
+      "title": "This Is Fine",
+      "url": "https://i.imgflip.com/wxica.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Tuxedo Winnie The Pooh",
+      "url": "https://i.imgflip.com/2ybua0.png"
+    },
+    {
+      "id": 17,
+      "title": "Monkey Puppet",
+      "url": "https://i.imgflip.com/2gnnjh.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Trade Offer",
+      "url": "https://i.imgflip.com/54hjww.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Boardroom Meeting Suggestion",
+      "url": "https://i.imgflip.com/m78d.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Bike Fall",
+      "url": "https://i.imgflip.com/1b42wl.jpg"
+    },
+    {
+      "id": 21,
+      "title": "I Bet He's Thinking About Other Women",
+      "url": "https://i.imgflip.com/1t171a.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Marked Safe From",
+      "url": "https://i.imgflip.com/2odckz.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Megamind peeking",
+      "url": "https://i.imgflip.com/64sz4u.png"
+    },
+    {
+      "id": 24,
+      "title": "Blank Button",
+      "url": "https://i.imgflip.com/1yxkcp.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Hide The Pain Harold",
+      "url": "https://i.imgflip.com/gk5el.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Panik Kalm Panik",
+      "url": "https://i.imgflip.com/3qqcim.png"
+    },
+    {
+      "id": 27,
+      "title": "Two Buttons",
+      "url": "https://i.imgflip.com/1g8my4.jpg"
+    }
+  ],
+  "user_memes": [
+    {
+      "id": 1,
+      "title": "Boromir",
+      "top_comment": "One does not simply",
+      "bottom_comment": "convert data types in python",
+      "url": "https://i.imgflip.com/1bij.jpg",
+      "liked": false
+    },
+    {
+      "id": 2,
+      "title": "Hide The Pain Harold",
+      "top_comment": "What could go wrong with learning a years worth of coding in 3 months",
+      "bottom_comment": "Well I used to be Chris Hemsworth",
+      "url": "https://i.imgflip.com/gk5el.jpg",
+      "liked": false
+    },
+    {
+      "id": 3,
+      "title": "Drake",
+      "top_comment": "Looking up code on stackoverflow",
+      "bottom_comment": "Looking up code in last week's lab",
+      "url": "https://knowyourinternethome.files.wordpress.com/2018/12/no-yes-drake.jpg?w=640",
+      "liked": false
+    },
+    {
+      "id": 4,
+      "title": "Kayode Ewumi",
+      "top_comment": "Struggling with code and",
+      "bottom_comment": "you realize just go to discord",
+      "url": "https://i.imgflip.com/1l8lo8.jpg",
+      "liked": false
+    },
+    {
+      "id": 5,
+      "title": "Success Kid",
+      "top_comment": "When your code looks wrong",
+      "bottom_comment": "then you console.log and its right",
+      "url": "https://imgflip.com/s/meme/Success-Kid.jpg",
+      "liked": false
+    },
+    {
+      "id": 6,
+      "title": "World's Most Interesting Man",
+      "top_comment": "I don't alawys code html",
+      "bottom_comment": "but when I do I copy and paste",
+      "url": "https://imgflip.com/s/meme/The-Most-Interesting-Man-In-The-World.jpg",
+      "liked": false
+    },
+    {
+      "id": 7,
+      "title": "Willy Wonka",
+      "top_comment": "Tell me again how you",
+      "bottom_comment": "destroyed the code challenge",
+      "url": "https://i.imgflip.com/b47pu.jpg?a468720",
+      "liked": false
+    },
+    {
+      "id": 8,
+      "title": "Giorgio A. Tsoukalos",
+      "top_comment": "Who finished my code?",
+      "bottom_comment": "Aliens",
+      "url": "https://i.imgflip.com/26am.jpg",
+      "liked": false
+    }
+  ],
+  "liked_memes": [
+    {
+      "id": 9999,
+      "title": "Hide The Pain Harold",
+      "top_comment": "What could go wrong with learning a years worth of coding in 3 months",
+      "bottom_comment": "Well I used to be Chris Hemsworth",
+      "url": "https://i.imgflip.com/gk5el.jpg",
+      "liked": true
+    },
+    {
+      "id": 10000,
+      "title": "whenYouMissOutOnTheDemocracyMeme",
+      "url": "https://i.redd.it/l4sq8vmc2z8b1.jpg",
+      "liked": true
+    }
+  ]
+}
